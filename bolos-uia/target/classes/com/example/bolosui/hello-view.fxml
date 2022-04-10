@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="695.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="695.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <AnchorPane prefHeight="700.0" prefWidth="400.0" style="-fx-background-color: #A9A9A9;" BorderPane.alignment="CENTER">
          <children>
@@ -44,8 +44,8 @@
                   <Image url="@pass-icon.png" />
                </image>
             </ImageView>
-            <TextField layoutX="242.0" layoutY="52.0" promptText="Username / Email" />
-            <TextField layoutX="242.0" layoutY="100.0" promptText="Password" />
+            <TextField fx:id="txtUsername" layoutX="242.0" layoutY="52.0" promptText="Username" />
+            <TextField fx:id="txtPassword" layoutX="242.0" layoutY="100.0" promptText="Password" />
             <CheckBox layoutX="239.0" layoutY="169.0" mnemonicParsing="false" text="Remember Me" />
             <Button layoutX="281.0" layoutY="196.0" mnemonicParsing="false" style="-fx-background-color: #4cc1f6; -fx-text-fill: #FFFFFF;" text="LOGIN">
                <font>
@@ -132,6 +132,7 @@
                   <Font name="Sylfaen" size="14.0" />
                </font>
             </RadioButton>
+            <Label layoutX="466.0" layoutY="84.0" text="Status" textFill="#ae1616" />
          </children></AnchorPane>
    </center>
 </BorderPane>
