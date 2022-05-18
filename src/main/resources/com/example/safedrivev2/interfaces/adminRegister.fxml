@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="registerButton" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.safedrivev2.controllers.AdminRegisterController">
+    <children>
+        <AnchorPane prefHeight="100.0" prefWidth="600.0" />
+        <Label layoutX="186.0" layoutY="155.0" text="First name">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="firstnameTextField" layoutX="186.0" layoutY="182.0" promptText="First name">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </TextField>
+        <Label layoutX="186.0" layoutY="228.0" text="Last name">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="lastnameTextField" layoutX="186.0" layoutY="255.0" promptText="Last name">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </TextField>
+        <Label layoutX="185.0" layoutY="301.0" text="E-mail">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="emailTextField" layoutX="186.0" layoutY="328.0" promptText="E-mail">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </TextField>
+        <Label layoutX="187.0" layoutY="375.0" text="Username">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="usernameTextField" layoutX="188.0" layoutY="402.0" promptText="Username">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </TextField>
+        <PasswordField fx:id="setPasswordField" layoutX="188.0" layoutY="474.0" promptText="Password">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </PasswordField>
+        <Label layoutX="188.0" layoutY="447.0" text="Password">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <PasswordField fx:id="confirmPasswordField" layoutX="188.0" layoutY="546.0" promptText="Confirm password">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </PasswordField>
+        <Label layoutX="189.0" layoutY="519.0" text="Confirm password">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="cancelAdminButton" layoutX="209.0" layoutY="622.0" mnemonicParsing="false" onAction="#setCancelAdminButtonOnAction" text="Cancel" />
+        <Button fx:id="registerAdminButton" layoutX="333.0" layoutY="622.0" mnemonicParsing="false" onAction="#registerButtonOnAction" text="Register">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </Button>
+    </children>
+    <cursor>
+        <Cursor fx:constant="DEFAULT" />
+    </cursor>
+</AnchorPane>

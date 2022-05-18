@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="213.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <AnchorPane prefHeight="400.0" prefWidth="497.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="168.0" layoutY="101.0" mnemonicParsing="false" text="Requests" />
+            <Button layoutX="168.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Car list" />
+            <Button layoutX="168.0" layoutY="232.0" mnemonicParsing="false" text="Driver list" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
