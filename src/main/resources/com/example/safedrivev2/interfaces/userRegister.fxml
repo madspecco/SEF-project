@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="registerPage" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.safedrivev2.controllers.AdminRegisterController">
+<AnchorPane fx:id="registerPage" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.safedrivev2.controllers.UserRegisterController">
    <children>
       <Label id="confirmPasswordLabel" fx:id="confirmPasswordLabel" alignment="CENTER" layoutX="133.0" layoutY="539.0" prefHeight="40.0" prefWidth="413.0" textFill="RED">
          <font>
@@ -63,7 +63,7 @@
       </Button>
       <ImageView fitHeight="395.0" fitWidth="240.0" layoutX="990.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/skull_logo.png" />
+            <Image url="@../images/logo.png" />
          </image>
       </ImageView>
       <Polygon fill="WHITE" layoutX="728.0" layoutY="360.0" points="184.0, -360.0, -12.0, 360.0, 210.0, -360.0" stroke="WHITE" strokeType="INSIDE" />

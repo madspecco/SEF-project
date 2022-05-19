@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 public class UserRegisterController {
     @FXML
-    private Button registrationButton;
+    private Button registerButton;
     @FXML
     private Label confirmPasswordLabel;
     @FXML
@@ -64,7 +64,7 @@ public class UserRegisterController {
             String encryptedPass = PassBasedEnc.generateSecurePassword(setPasswordField.getText(), saltvalue);*/
 
             UserServices.registerUser(firstname, lastname, email, username, saltvalue, encryptedPass);        // remove email parameter from here and actual function
-            FxmlUtilities.sceneTransiton(registrationButton,"interfaces/userLogIn.fxml",1280,720);
+            FxmlUtilities.sceneTransiton(registerButton,"interfaces/userLogIn.fxml",1280,720);
 
         }else{
             confirmPasswordLabel.setText("Password does not match");
