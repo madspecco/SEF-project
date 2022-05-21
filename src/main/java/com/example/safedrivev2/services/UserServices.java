@@ -254,6 +254,34 @@ public class UserServices {
 
 
 
+    public static void DeleteDriver(String id){
+
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        //int user_id=retriveLastUserId(connectDB);
+        //user_id++;
+        System.out.println("THe delete id is: " + id + "\n\n");
+        //String DeleteFields = "DELETE FROM driver_db WHERE ('driver_id' = '"+id+"')";
+        String DeleteFields = "DELETE FROM driver_db WHERE driver_id='" +id + "';";
+        //DELETE FROM `safedriveuserdatabase`.`driver_db` WHERE (`driver_id` = '4');
+        //String insertValues = firstname+ "','" +lastname+ "')";
+        //String insertToRegister = insertFields + insertValues;
+
+
+        try{
+
+            Statement statement = connectDB.createStatement();
+            statement.executeUpdate(DeleteFields);
+
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+
+
 
 
 }
