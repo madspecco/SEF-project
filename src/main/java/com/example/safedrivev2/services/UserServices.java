@@ -228,6 +228,31 @@ public class UserServices {
 
 
 
+    public static void AddDriver(String firstname, String lastname){
+
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        //int user_id=retriveLastUserId(connectDB);
+        //user_id++;
+
+        String insertFields = "INSERT INTO driver_db(firstname, lastname) VALUES ('";
+        String insertValues = firstname+ "','" +lastname+ "')";
+        String insertToRegister = insertFields + insertValues;
+
+
+        try{
+
+            Statement statement = connectDB.createStatement();
+            statement.executeUpdate(insertToRegister);
+
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+
 
 
 

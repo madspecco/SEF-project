@@ -6,16 +6,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0"  xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.safedrivev2.controllers.ChooseAccountTypeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.safedrivev2.controllers.ChooseAccountTypeController">
     <right>
-        <AnchorPane prefHeight="720.0" prefWidth="759.0" style="-fx-background-color: #abdbe3;" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="720.0" prefWidth="721.0" style="-fx-background-color: #abdbe3;" BorderPane.alignment="CENTER">
             <children>
-                <Label fx:id="chooseAccType" layoutX="215.0" layoutY="108.0" prefHeight="58.0" prefWidth="366.0" text="Select account type">
+                <Label fx:id="chooseAccType" layoutX="148.0" layoutY="179.0" prefHeight="75.0" prefWidth="419.0" text="SELECT ACCOUNT">
                     <font>
-                        <Font size="36.0" />
+                        <Font name="Segoe Print" size="42.0" />
                     </font>
                 </Label>
-            <AnchorPane fx:id="userAnchor" layoutX="132.0" layoutY="213.0" onMouseClicked="#userAnchorOnAction" prefHeight="313.0" prefWidth="200.0">
+            <AnchorPane fx:id="userAnchor" layoutX="161.0" layoutY="214.0" onMouseClicked="#userAnchorOnAction" prefHeight="313.0" prefWidth="200.0">
                <children>
                   <ImageView fitHeight="77.0" fitWidth="97.0" layoutX="53.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -32,7 +32,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </AnchorPane>
-            <AnchorPane fx:id="adminAnchor" layoutX="357.0" layoutY="216.0" onMouseClicked="#adminAnchorOnAction" prefHeight="313.0" prefWidth="200.0">
+            <AnchorPane fx:id="adminAnchor" layoutX="401.0" layoutY="216.0" onMouseClicked="#adminAnchorOnAction" prefHeight="313.0" prefWidth="200.0">
                <children>
                   <ImageView fitHeight="106.0" fitWidth="147.0" layoutX="46.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -55,11 +55,21 @@
    <center>
         <AnchorPane prefHeight="720.0" prefWidth="525.0" style="-fx-background-color: #eeeee4;" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fx:id="logoImageView" fitHeight="279.0" fitWidth="505.0" layoutX="10.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="logoImageView" fitHeight="279.0" fitWidth="505.0" layoutX="8.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../images/logo.png" />
                     </image>
                 </ImageView>
+            <Label fx:id="chooseAccType1" layoutX="137.0" layoutY="297.0" prefHeight="86.0" prefWidth="249.0" style="-fx-border-width: 4;" text="Anywhere" textAlignment="CENTER">
+               <font>
+                  <Font name="Segoe Print" size="48.0" />
+               </font>
+            </Label>
+            <Label fx:id="chooseAccType11" layoutX="181.0" layoutY="383.0" prefHeight="64.0" prefWidth="160.0" text="Anytime" textAlignment="CENTER" textFill="#01a9f3">
+               <font>
+                  <Font name="Segoe Print" size="36.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
    </center>

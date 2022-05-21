@@ -2,18 +2,46 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.safedrivev2.controllers.adminInterfaceController">
    <left>
-      <AnchorPane prefHeight="400.0" prefWidth="213.0" BorderPane.alignment="CENTER" />
-   </left>
-   <right>
-      <AnchorPane prefHeight="400.0" prefWidth="497.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="300.0" prefWidth="330.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="168.0" layoutY="101.0" mnemonicParsing="false" text="Requests" />
-            <Button layoutX="168.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Car list" />
-            <Button layoutX="168.0" layoutY="232.0" mnemonicParsing="false" text="Driver list" />
+            <Button fx:id="DriverManagerButton" layoutX="90.0" layoutY="90.0" mnemonicParsing="false" onAction="#setDriverManagerButton" prefHeight="120.0" prefWidth="150.0" text="DRIVER MANAGER" />
+         </children>
+      </AnchorPane>
+   </left>
+   <top>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="192.0" layoutY="43.0" text="ADMIN INTERFACE" textFill="#01a9f3">
+               <font>
+                  <Font name="Segoe Print" size="64.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="300.0" prefWidth="330.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="RequestManagerButton" layoutX="107.0" layoutY="90.0" mnemonicParsing="false" onAction="#setRequestManagerButton" prefHeight="120.0" prefWidth="150.0" text="REQUEST MANAGER" />
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="300.0" prefWidth="330.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="CarManagerButton" layoutX="90.0" layoutY="90.0" mnemonicParsing="false" onAction="#setCarManagerButton" prefHeight="120.0" prefWidth="150.0" text="CAR MANAGER" />
          </children>
       </AnchorPane>
    </right>
+   <bottom>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="backInterface" layoutX="437.0" layoutY="40.0" mnemonicParsing="false" onAction="#setBackInterface" prefHeight="120.0" prefWidth="150.0" text="BACK" />
+         </children>
+      </AnchorPane>
+   </bottom>
 </BorderPane>
