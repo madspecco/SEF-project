@@ -282,6 +282,57 @@ public class UserServices {
 
 
 
+    public static void AddCar(String brand, String model, String licenseNumber){
+
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        //int user_id=retriveLastUserId(connectDB);
+        //user_id++;
+
+        String insertFields = "INSERT INTO car_db(brand, model, licenseNumber) VALUES ('";
+        String insertValues = brand+ "','" +model+ "','" + licenseNumber + "')";
+        String insertToRegister = insertFields + insertValues;
+
+
+        try{
+
+            Statement statement = connectDB.createStatement();
+            statement.executeUpdate(insertToRegister);
+
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+
+
+    public static void DeleteCar(String id){
+
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        System.out.println("The delete id is: " + id + "\n\n");
+        String DeleteFields = "DELETE FROM car_db WHERE car_id='" +id + "';";
+
+        try{
+
+            Statement statement = connectDB.createStatement();
+            statement.executeUpdate(DeleteFields);
+
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+
+
+
+
+
+
 
 
 }
