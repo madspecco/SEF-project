@@ -290,6 +290,8 @@ public class UserServices {
         //int user_id=retriveLastUserId(connectDB);
         //user_id++;
 
+        if(checkIfLicense(licenseNumber) == false)
+        {
         String insertFields = "INSERT INTO car_db(brand, model, licenseNumber) VALUES ('";
         String insertValues = brand+ "','" +model+ "','" + licenseNumber + "')";
         String insertToRegister = insertFields + insertValues;
@@ -303,6 +305,7 @@ public class UserServices {
         }catch (Exception e){
             e.printStackTrace();
             e.getCause();
+        }
         }
     }
 
@@ -328,6 +331,84 @@ public class UserServices {
     }
 
 
+    public static void DeleteRequest(String id){
+
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        System.out.println("The delete id is: " + id + "\n\n");
+        String DeleteFields = "DELETE FROM request_db WHERE car_id='" +id + "';";
+
+        try{
+
+            Statement statement = connectDB.createStatement();
+            statement.executeUpdate(DeleteFields);
+
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+
+    public static void AcceptRequest(String id){
+
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+
+        // UPDATE Customers SET ContactName = 'Alfred Schmidt', City = 'Frankfurt' WHERE CustomerID = 1;
+
+
+        String UpdateFields = "UPDATE request_db SET status = 'Accepted' WHERE request_id='"+id+"';";
+
+        try{
+
+            Statement statement = connectDB.createStatement();
+            statement.executeUpdate(UpdateFields);
+
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+
+    public static void DeclineRequest(String id, String msg){
+
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+
+        // UPDATE Customers SET ContactName = 'Alfred Schmidt', City = 'Frankfurt' WHERE CustomerID = 1;
+
+
+        if(checkIfStatus(id, "Accepted") == false && checkIfStatus(id, "Declined") == false) {
+
+            String UpdateFields = "UPDATE request_db SET status = 'Declined',msg = '" + msg + "' WHERE request_id='" + id + "';";
+            System.out.println(UpdateFields);
+
+            try {
+
+                Statement statement = connectDB.createStatement();
+                statement.executeUpdate(UpdateFields);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                e.getCause();
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 
     public static boolean checkIfExist(String username){
         DataBaseConnection connectNow = new DataBaseConnection();
@@ -345,6 +426,63 @@ public class UserServices {
                 String dbUsername = queryResult.getString("username");
 
                 if (dbUsername.compareTo(username) == 0) {
+                    return true;
+                }
+            }
+
+        }catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+        return false;
+
+    }
+
+    public static boolean checkIfLicense(String license){
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectionDB = connectNow.getConnection();
+
+        //String retriveEncryptedPassStatement ="SELECT password,saltvalue FROM admin_account WHERE username = '" + username +"'";
+        String insertFields = "SELECT licenseNumber FROM car_db";
+
+
+        try {
+            Statement statement = connectionDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(insertFields);
+
+            while (queryResult.next()) {
+                String dbLicense= queryResult.getString("username");
+
+                if (dbLicense.compareTo(license) == 0) {
+                    return true;
+                }
+            }
+
+        }catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+        return false;
+
+    }
+
+
+    public static boolean checkIfStatus(String id, String status){
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectionDB = connectNow.getConnection();
+
+        //String retriveEncryptedPassStatement ="SELECT password,saltvalue FROM admin_account WHERE username = '" + username +"'";
+        String insertFields = "SELECT status FROM request_db";
+
+
+        try {
+            Statement statement = connectionDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(insertFields);
+
+            while (queryResult.next()) {
+                String dbStatus= queryResult.getString("status");
+
+                if (dbStatus.compareTo(status) == 0) {
                     return true;
                 }
             }
