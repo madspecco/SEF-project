@@ -80,18 +80,18 @@ public class UserLogInController {
 
             try{
                 if(UserServices.validateLogin(userTextField.getText(), enterPasswordField.getText(),loginButton)==true){
-
+                            // Aici adaug username in new database
                     setUserInstance(userTextField.getText());
                     //setStoreInvetoryInstance();
                     //setStoreCouponList();
                     FxmlUtilities.sceneTransiton(loginButton,"interfaces/userInterface.fxml",1280,720);
                 }
             }catch(InexistentUserException exception1){
-               // loginMessageLabel.setText(exception1.getMessage());
-                loginMessageLabel.setText("User does not exist! Please register!");
+                loginMessageLabel.setText(exception1.getMessage());
+                //loginMessageLabel.setText("User does not exist! Please register!");
             }catch(UserPasswordInvalidException exception2){
-                //loginMessageLabel.setText(exception2.getMessage());
-                loginMessageLabel.setText("Invalid password! Try again!");
+                loginMessageLabel.setText(exception2.getMessage());
+               // loginMessageLabel.setText("Invalid password! Try again!");
             }catch (Exception e){
                 e.printStackTrace();
                 e.getCause();

@@ -3,13 +3,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.safedrivev2.controllers.userInterfaceController">
+   <left>
+      <AnchorPane prefHeight="800.0" prefWidth="531.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="165.0" layoutY="144.0" prefHeight="25.0" prefWidth="270.0" promptText="Please write the name of your location" />
-            <Button layoutX="238.0" layoutY="175.0" mnemonicParsing="false" text="Send Request" />
+            <TextField fx:id="locationTextField" layoutX="165.0" layoutY="153.0" prefHeight="25.0" prefWidth="270.0" promptText="Please write the name of your location" />
+            <Button fx:id="reqButton" layoutX="165.0" layoutY="202.0" mnemonicParsing="false" onAction="#requestOnButton" prefHeight="25.0" prefWidth="117.0" text="Send Request" />
+            <TextField fx:id="usernameTextField" layoutX="165.0" layoutY="105.0" prefHeight="25.0" prefWidth="269.0" promptText="Please write your username" />
+            <Button fx:id="checkStatusButton" layoutX="304.0" layoutY="202.0" mnemonicParsing="false" onAction="#checkOnButton" prefHeight="25.0" prefWidth="130.0" text="Check Status" />
+            <Button fx:id="cancelButton" layoutX="232.0" layoutY="237.0" mnemonicParsing="false" onAction="#cancelOnButton" text="Cancel/Delete Request" />
+            <Button fx:id="logoutButton" layoutX="254.0" layoutY="499.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" text="Log out" />
+            <Label layoutX="135.0" layoutY="71.0" text="Make sure to complete both fields for sending the request!!" />
+            <Label fx:id="statusLabel" layoutX="266.0" layoutY="299.0" text="Status" />
+            <Label fx:id="message" layoutX="259.0" layoutY="370.0" text="message" />
+            <Label layoutX="135.0" layoutY="54.0" text="Make sure to always write your username before pressing any button!" />
          </children>
       </AnchorPane>
-   </center>
+   </left>
 </BorderPane>

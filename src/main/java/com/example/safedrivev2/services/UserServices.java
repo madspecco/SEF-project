@@ -329,7 +329,33 @@ public class UserServices {
 
 
 
+    public static boolean checkIfExist(String username){
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectionDB = connectNow.getConnection();
 
+        //String retriveEncryptedPassStatement ="SELECT password,saltvalue FROM admin_account WHERE username = '" + username +"'";
+        String insertFields = "SELECT username FROM request_db";
+
+
+        try {
+            Statement statement = connectionDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(insertFields);
+
+            while (queryResult.next()) {
+                String dbUsername = queryResult.getString("username");
+
+                if (dbUsername.compareTo(username) == 0) {
+                    return true;
+                }
+            }
+
+        }catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+        return false;
+
+    }
 
 
 
