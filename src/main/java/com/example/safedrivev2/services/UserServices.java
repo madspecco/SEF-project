@@ -337,7 +337,7 @@ public class UserServices {
         Connection connectDB = connectNow.getConnection();
 
         System.out.println("The delete id is: " + id + "\n\n");
-        String DeleteFields = "DELETE FROM request_db WHERE car_id='" +id + "';";
+        String DeleteFields = "DELETE FROM request_db WHERE request_id='" +id + "';";
 
         try{
 
@@ -383,8 +383,8 @@ public class UserServices {
         // UPDATE Customers SET ContactName = 'Alfred Schmidt', City = 'Frankfurt' WHERE CustomerID = 1;
 
 
-        if(checkIfStatus(id, "Accepted") == false && checkIfStatus(id, "Declined") == false) {
-
+        //if(checkIfStatus(id, "Accepted") == false && checkIfStatus(id, "Declined") == false) {
+        if(checkIfStatus(id, "Pending") == true){
             String UpdateFields = "UPDATE request_db SET status = 'Declined',msg = '" + msg + "' WHERE request_id='" + id + "';";
             System.out.println(UpdateFields);
 
