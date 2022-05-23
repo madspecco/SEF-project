@@ -11,7 +11,7 @@ public class DataBaseConnection {
         String databaseName = "safedriveuserdatabase";
         //String databaseName = "Local instance MySQL80";
         String databaseUser = "root";
-        String databasePassword = "1234";
+        String databasePassword = "teatrix123";
         String url = "jdbc:mysql://localhost/" + databaseName;
         try{
 

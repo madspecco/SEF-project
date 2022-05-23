@@ -38,7 +38,7 @@ public class AdminLogInController {
         FxmlUtilities.sceneTransiton(cancelAdminButton,"interfaces/chooseAccountType.fxml",1280,720);
     }
     public void setAdminRegisterButtonOnAction(ActionEvent event) throws IOException {
-        FxmlUtilities.sceneTransiton(registerAdminButton,"interfaces/adminRegister.fxml",1280,720);
+        FxmlUtilities.sceneTransiton(registerAdminButton,"interfaces/adminRegisterV2.fxml",1280,720);
     }
 
    /* public void setAdminLoginButtonOnAction(ActionEvent event) throws IOException {
